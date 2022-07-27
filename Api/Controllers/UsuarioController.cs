@@ -17,7 +17,7 @@ namespace Api.Controllers
         {
             _configuration = configuration;
         }
-        
+
         [HttpGet]
         public JsonResult Get()
         {
@@ -30,10 +30,10 @@ namespace Api.Controllers
             DataTable table = new DataTable();
             string sqlDataSource = _configuration.GetConnectionString("DataBase");
             NpgsqlDataReader myreader;
-            using(NpgsqlConnection mycon = new NpgsqlConnection(sqlDataSource))
+            using (NpgsqlConnection mycon = new NpgsqlConnection(sqlDataSource))
             {
                 mycon.Open();
-                using(NpgsqlCommand mycommand = new NpgsqlCommand(query, mycon))
+                using (NpgsqlCommand mycommand = new NpgsqlCommand(query, mycon))
                 {
                     myreader = mycommand.ExecuteReader();
                     table.Load(myreader);
