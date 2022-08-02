@@ -71,7 +71,7 @@ namespace Api.Controllers
             }
             return new JsonResult("Adicionado com sucesso!");
         }
-
+        
         [HttpPut]
         public JsonResult Put(Usuario usuario)
         {

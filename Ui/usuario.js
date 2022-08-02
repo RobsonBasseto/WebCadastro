@@ -103,5 +103,4 @@ methods:{
 mounted:function(){
     this.refreshData();
 }
-
 }
